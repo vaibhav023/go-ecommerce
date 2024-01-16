@@ -5,18 +5,18 @@ receivers:
       
 exporters:
   prometheus:
-    endpoint: "${OTL_HOST}:8889"
+    endpoint: "${OTL_HOST}8889"
     const_labels:
       label1: value1
 
   logging:
 
   zipkin:
-    endpoint: "${ZIPKIN_HOST}:9411/api/v2/spans"
+    endpoint: "${ZIPKIN_ENDPOINT}/api/v2/spans"
     format: proto
 
   otlp:
-    endpoint: ${JAEGER_HOST}:16686
+    endpoint: ${JAEGER_ENDPOINT}
     tls:
       insecure: true
 
