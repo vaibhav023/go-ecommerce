@@ -1,0 +1,12 @@
+FROM prom/prometheus:latest
+
+WORKDIR /etc/prometheus
+
+COPY prometheus.yml /etc/prometheus/prometheus.yml
+
+#USER root
+
+ENV PROMETHEUS_HOST_PORT=$PROMETHEUS_HOST_PORT
+ENV PROMETHEUS_PORT=$PROMETHEUS_PORT
+
+CMD ["--config.file=/etc/prometheus/prometheus.yml"]
