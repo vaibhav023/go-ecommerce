@@ -16,7 +16,7 @@ exporters:
     format: proto
 
   otlp:
-    endpoint: ${JAEGER_HOST}:16686
+    endpoint: http://jaeger.demo.svc:14250
     tls:
       insecure: true
 
