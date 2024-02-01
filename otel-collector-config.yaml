@@ -5,18 +5,18 @@ receivers:
       
 exporters:
   prometheus:
-    endpoint: "${OTL_HOST}:8889"
+    endpoint: "otel-collector.app.svc"
     const_labels:
       label1: value1
 
   logging:
 
   zipkin:
-    endpoint: "${ZIPKIN_HOST}:9411/api/v2/spans"
+    endpoint: "zipkin.app.svc/api/v2/spans"
     format: proto
 
   otlp:
-    endpoint: http://jaeger.demo.svc:14250
+    endpoint: jaeger.app.svc
     tls:
       insecure: true
 
